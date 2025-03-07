@@ -21,8 +21,7 @@
 #define BASE_SENSOR_H
 
 #include "lego_uart.h"
-#include "Arduino.h"
-#include "Debug.h"
+#include <Arduino.h>
 
 #define _(type) static_cast<type>
 

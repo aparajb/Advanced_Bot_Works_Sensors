@@ -18,7 +18,7 @@
 #ifndef COLOUR_SENSOR_H
 #define COLOUR_SENSOR_H
 
-#include "Arduino.h"
+#include <Arduino.h>
 #include "Base_Sensor.h"
 
 

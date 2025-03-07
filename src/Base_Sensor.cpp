@@ -96,10 +96,6 @@ void Base_Sensor::commWaitForHubIdle(){
  *          - Start UART connection at 115200 bauds
  */
 void Base_Sensor::connectToHub() {
-    #if (DEBUG_COMMS || DEBUG)
-        Serial.println("INIT SENSOR");
-    #endif
-
     // Wait for HUB to idle it's TX pin (idle = High)
     // TODO: ces bidouilles émettent b'\x00\x00' avant tout choses sur la ligne série !!
     commWaitForHubIdle();
@@ -115,9 +111,6 @@ void Base_Sensor::connectToHub() {
             // read the incoming byte
             unsigned char dat = Serial1.read();
             if (dat == 0x04) { // ACK
-                #if (DEBUG || DEBUG_COMMS)
-                    Serial.println("Connection established");
-                #endif
                 Serial1.begin(115200);
                 m_connected = true;
                 m_lastAckTick = millis();
@@ -169,10 +162,6 @@ void Base_Sensor::process(){
 
     // Check disconnection from the Hub and go in reset/init mode if needed
     if (millis() - m_lastAckTick > 200) {
-        #if (DEBUG || DEBUG_COMMS)
-            Serial.print("Disconnect; Too much time since last NACK - ");
-            Serial.println(millis() - m_lastAckTick);
-        #endif
         m_connected = false;
     }
 }

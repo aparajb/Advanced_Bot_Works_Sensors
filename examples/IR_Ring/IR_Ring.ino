@@ -1,11 +1,11 @@
 #include <Arduino.h>
-#include <Colour Sensor\Colour_Sensor.h>
-#include <TSSP Array\TSSP_Array.h>
+#include <Colour_Sensor.h>
+#include <TSSP_Array.h>
 
 Colour_Sensor Nano;
 TSSP_Array IR_Sensors;
 
-uint16_t data[4];
+uint16_t data[4] = {0};
 
 void setup() {
     IR_Sensors.init();

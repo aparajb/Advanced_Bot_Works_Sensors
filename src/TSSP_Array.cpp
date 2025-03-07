@@ -3,8 +3,8 @@
 void TSSP_Array::init() {
     for(uint8_t i = 0; i < TSSP_NUM; i++) {
         pinMode(pins[i], INPUT);
-        x_values[i] = cosf(RADIANS_TO_DEGREES * (450.0f - i * 30.0f));
-        y_values[i] = sinf(RADIANS_TO_DEGREES * (450.0f - i * 30.0f));
+        x_values[i] = cosf(RAD_TO_DEG * (450.0f - i * 30.0f));
+        y_values[i] = sinf(RAD_TO_DEG * (450.0f - i * 30.0f));
 	  }
 }
 
