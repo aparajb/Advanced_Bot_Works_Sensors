@@ -2,7 +2,7 @@
 
 ## Summary
 
-This is a library is utilised by all of the sensors manufactured by [Advanced Bot Works] (https://advancedbotworks.com). As per the description on our website, we have open-sourced all of the code the runs on the sensors. The program that runs on the Sensors can be found in this library and may be edited to help with specific scenarios.  The chips in all of the sensors emulate a Spike Prime Colour Sensor and send relevant data across the RED, Green and Blue (RGB) channels.
+This is a library is utilised by all of the sensors manufactured by [Advanced Bot Works](https://advancedbotworks.com). As per the description on our website, we have open-sourced all of the code the runs on the sensors. The program that runs on the Sensors can be found in this library and may be edited to help with specific scenarios.  The chips in all of the sensors emulate a Spike Prime Colour Sensor and send relevant data across the RED, Green and Blue (RGB) channels.
 
 The code that runs on each sensor can be found in the "examples" folder.
 
@@ -14,11 +14,11 @@ This library is designed to work with Arduino IDE versions 2.3.x or later. Testi
 
 ## Getting Started
 
-Advanced Bot Works sensors can be purchased from the [Advanced Bot Works] (https://advancedbotworks.com) website. Please read through product descriptions carefully before purchasing to ensure you are not disappointed.
+Advanced Bot Works sensors can be purchased from the [Advanced Bot Works](https://advancedbotworks.com) website. Please read through product descriptions carefully before purchasing to ensure you are not disappointed.
 
 A LEGO Spike Prime Hub will be required to connect to the sensor using the cable that is included in the package.
 
-From there you can use the [online](https://spike.legoeducation.com/prime/lobby/) version of Spike Prime to program the Spike. Start a new project, When the Spike Hub is connected to your computer, it will appear as a Colour Sensor. From there, you can click the drop down next to the Sensor to see the "Red", "Green" and "Blue" values. These values correspond to what is on the [Advanced Bot Works] (https://advancedbotworks.com) website.
+From there you can use the [online](https://spike.legoeducation.com/prime/lobby/) version of Spike Prime to program the Spike. Start a new project, When the Spike Hub is connected to your computer, it will appear as a Colour Sensor. From there, you can click the drop down next to the Sensor to see the "Red", "Green" and "Blue" values. These values correspond to what is on the [Advanced Bot Works](https://advancedbotworks.com) website.
 
 ## Software
 
