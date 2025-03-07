@@ -37,3 +37,14 @@ If this does not work, you can manually install the library:
 2. Rename the folder "Advanced_Bot_Works_Sensors-main" to "Advanced_Bot_Works_Sensors".
 3. Move the "Advanced_Bot_Works_Sensors" folder into the "libraries" directory inside your Arduino sketchbook directory.  You can view your sketchbook location by opening the "File" menu and selecting "Preferences" in the Arduino IDE.  If there is not already a "libraries" folder in that location, you should make the folder yourself.
 4. After installing the library, restart the Arduino IDE.
+
+## Examples
+
+Several example sketches are available that show how to use the library. You can access them from the Arduino IDE by opening the "File" menu, selecting "Examples", and then selecting "Advanced_Bot_Works_Sensors". If you cannot find these examples, the library was probably installed incorrectly and you should retry the installation instructions above.
+
+Each example corresponds to the actual code uploaded on all the relevant sensor before shipping. Feel free to read through the code to understand how the calculations are performed.
+
+## Version History
+
+* 2.0.0 (2025-03-07): Added LRF Module to the library.
+* 1.0.0 (2024-06-04): Original Release for IR Ring found [here](https://github.com/aparajb/ABW_IR_Ring)
