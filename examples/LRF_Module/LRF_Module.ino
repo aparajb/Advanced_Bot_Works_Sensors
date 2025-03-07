@@ -2,6 +2,7 @@
 #include <Colour_Sensor.h>
 
 #define SENSOR_COUNT 3
+#define CENTIMETRES false
 
 const uint8_t xshutPins[SENSOR_COUNT] = {16, 14, 15};
 uint16_t data[4] = {0};
@@ -30,14 +31,18 @@ void setup()
         }
 
         sensors[i].setAddress(0x2A + i);
-        sensors[i].startContinuous(33); // 30Hz
+        sensors[i].startContinuous(33); // ~30Hz
     }
 }
 
 void loop()
 {
     for (uint8_t i = 0; i < SENSOR_COUNT; i++) {
-        data[i] = sensors[i].read();
+        #if CENTIMETRES
+            data[i] = (uint16_t)(sensors[i].read() / 10);
+        #else
+            data[i] = sensors[i].read();
+        #endif
     }
     Nano.process();
 }
