@@ -20,6 +20,8 @@ A LEGO Spike Prime Hub will be required to connect to the sensor using the cable
 
 From there you can use the [online](https://spike.legoeducation.com/prime/lobby/) version of Spike Prime to program the Spike. Start a new project, When the Spike Hub is connected to your computer, it will appear as a Colour Sensor. From there, you can click the drop down next to the Sensor to see the "Red", "Green" and "Blue" values. These values correspond to what is on the [Advanced Bot Works](https://advancedbotworks.com) website.
 
+Alternatively, download the LEGO Education SPIKE™ App which will have the same interface.
+
 ## Software
 
 If you are using version 2.3.4 or later of the [Arduino software (IDE)](http://www.arduino.cc/en/Main/Software), you can use the Library Manager to install this library:
