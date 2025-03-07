@@ -1,4 +1,3 @@
-#include <Arduino.h>
 #include <Colour_Sensor.h>
 #include <TSSP_Array.h>
 
