@@ -5,7 +5,7 @@ void TSSP_Array::init() {
         pinMode(pins[i], INPUT);
         x_values[i] = cosf(RAD_TO_DEG * (450.0f - i * 30.0f));
         y_values[i] = sinf(RAD_TO_DEG * (450.0f - i * 30.0f));
-	  }
+	}
 }
 
 void TSSP_Array::update() {
@@ -13,9 +13,6 @@ void TSSP_Array::update() {
 		for(uint8_t j = 0; j < TSSP_NUM; j++) {
 		    values[j] += 1 - digitalRead(pins[j]);
 	    }
-	}
-	for(uint8_t i = 0; i < TSSP_NUM; i++) {
-		sorted_values[i] = 0;
 	}
     for(uint8_t i = 0; i < TSSP_NUM; i++) {
         for(uint8_t j = 0; j < TSSP_NUM; j++) {
@@ -32,17 +29,16 @@ void TSSP_Array::update() {
 	}
     strength = sorted_values[0];
     direction_simple = (strength == 0) ? 0 : indexes[0] + 1;
-    int index_lower = indexes[0] - 1;
-    index_lower = (index_lower < 0) ? index_lower + 12 : index_lower;
-    int index_upper = indexes[0] + 1;
-    index_upper = (index_upper >= 12) ? index_upper - 12 : index_upper;
-    int index_lower_1 = indexes[0] - 2;
-    index_lower_1 = (index_lower_1 < 0) ? index_lower_1 + 12 : index_lower_1;
-    int index_upper_1 = indexes[0] + 2;
-    index_upper_1 = (index_upper_1 >= 12) ? index_upper_1 - 12 : index_upper_1;
-    float frac = (float)indexes[0] + ( ( (float)(values[index_upper] - values[index_lower]) + ((float)(values[index_upper_1] - values[index_lower_1]) / 2.0) )  /  (2.0 * (float)sorted_values[0]));
+
+    uint8_t index_lower_1 = (indexes[0] == 0) ? TSSP_NUM - 1 : indexes[0] - 1;
+    uint8_t index_upper_1 = (indexes[0] + 1) % 12;
+    uint8_t index_lower_2 = (indexes[0] < 2) ? indexes[0] + TSSP_NUM - 2 : indexes[0] - 2;
+    uint8_t index_upper_2 = (indexes[0] + 2) % 12;
+
+    float frac = (float)indexes[0] + ( ( (float)(values[index_upper_1] - values[index_lower_1]) + ((float)(values[index_upper_2] - values[index_lower_2]) / 2.0) )  /  (2.0 * (float)sorted_values[0]));
     frac = frac < 0 ? frac + 12.0 : frac;
     direction_advanced = (strength == 0) ? 0 : round(frac * 30.0);
+
 	for(uint8_t i = 0; i < TSSP_NUM; i++) {
 		values[i] = 0;
 		sorted_values[i] = 0;

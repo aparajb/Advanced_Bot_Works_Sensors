@@ -4,7 +4,7 @@
 Colour_Sensor Nano;
 TSSP_Array IR_Sensors;
 
-uint16_t data[4] = {0};
+uint16_t data[4];
 
 void setup() {
     IR_Sensors.init();
